@@ -3,11 +3,15 @@
 Caffeinate
 </h1>
 
-Have you ever thought, while drinking a cup of coffee, "maybe my Mac wants
-caffeine too?". It gets sleepy sometimes and dims its display, or falls
-asleep altogether! With this menulet, you can share the caffeine goodness
-and keep your Mac awake. Potentially most useful when giving presentations,
-connected to remote servers, or ensuring a long task will complete uninterrupted.
+<a href="https://github.com/zkokaja/caffeinate/releases/tag/v1.0">
+    <img src="images/release-badge.svg" alt="Version 1.0 Release Badge" />
+</a>
+
+Have you ever noticed your mac getting sleepy at the most inopportune time?
+First its display dims a little bit, and next it falls asleep altogether! With
+this menulet you can share that caffeine goodness, and keep your Mac awake.
+Potentially very useful when giving presentations, connected to remote
+servers, or ensuring a long task will complete uninterrupted.
 
 ## Usage
 
