@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB83FBF22B51A26F00E45686 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB83FBF12B51A26F00E45686 /* main.swift */; };
 		BBA40E9823D7CA4700F867AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA40E9723D7CA4700F867AB /* AppDelegate.swift */; };
 		BBA40E9A23D7CA4800F867AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA40E9923D7CA4800F867AB /* Assets.xcassets */; };
-		BBA40E9D23D7CA4800F867AB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA40E9B23D7CA4800F867AB /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB83FBF12B51A26F00E45686 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BBA40E9423D7CA4700F867AB /* Caffeinate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caffeinate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA40E9723D7CA4700F867AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA40E9923D7CA4800F867AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BBA40E9C23D7CA4800F867AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		BBA40E9E23D7CA4800F867AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBA40E9F23D7CA4800F867AB /* Caffeinate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caffeinate.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,10 +50,9 @@
 		BBA40E9623D7CA4700F867AB /* Caffeinate */ = {
 			isa = PBXGroup;
 			children = (
+				BB83FBF12B51A26F00E45686 /* main.swift */,
 				BBA40E9723D7CA4700F867AB /* AppDelegate.swift */,
 				BBA40E9923D7CA4800F867AB /* Assets.xcassets */,
-				BBA40E9B23D7CA4800F867AB /* MainMenu.xib */,
-				BBA40E9E23D7CA4800F867AB /* Info.plist */,
 				BBA40E9F23D7CA4800F867AB /* Caffeinate.entitlements */,
 			);
 			path = Caffeinate;
@@ -119,7 +117,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA40E9A23D7CA4800F867AB /* Assets.xcassets in Resources */,
-				BBA40E9D23D7CA4800F867AB /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,22 +127,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB83FBF22B51A26F00E45686 /* main.swift in Sources */,
 				BBA40E9823D7CA4700F867AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		BBA40E9B23D7CA4800F867AB /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBA40E9C23D7CA4800F867AB /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BBA40EA023D7CA4800F867AB /* Debug */ = {
@@ -266,14 +253,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caffeinate/Caffeinate.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Caffeinate/Info.plist;
+				DEVELOPMENT_TEAM = X9P427YLC2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Caffeinate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = zzada.Caffeinate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -285,14 +278,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caffeinate/Caffeinate.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Caffeinate/Info.plist;
+				DEVELOPMENT_TEAM = X9P427YLC2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Caffeinate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = zzada.Caffeinate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
