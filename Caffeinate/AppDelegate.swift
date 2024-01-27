@@ -6,12 +6,8 @@
 //  Copyright © 2020 zzada. All rights reserved.
 //
 
-// https://www.flaticon.com/free-icon/coffee_996289
-
 import OSLog
 import Cocoa
-
-let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
 struct Command {
     var name: String
@@ -54,8 +50,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBar = NSStatusBar()
         statusItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
         if let button = statusItem.button {
-            button.image = NSImage(named: "CoffeeWhite")
+            button.image = NSImage(named: "CoffeeIcon")
             button.image?.isTemplate = true
+            let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
             button.toolTip = "Caffeinate \(appVersion ?? "")"
         }
         
@@ -121,8 +118,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if sender.state == .on {
             sender.state = .off
-            statusItem.button?.image = NSImage(named: "CoffeeWhite")
-            statusItem.button?.image?.isTemplate = true
+            statusItem.button?.image = NSImage(named: "CoffeeIcon")
             return
         }
         
@@ -143,21 +139,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
                 
         // Run the process
+        let logger = Logger()
         let command = URL(fileURLWithPath: command.path)
         do {
-            os_log("Starting Process", type: .debug)
+            logger.debug("Starting Process")
             sender.state = .on
             statusItem.button?.image = NSImage(named: "CoffeeColor")
-            statusItem.button?.image?.isTemplate = false
-            try process = Process.run(command, arguments: arguments) { (Process) in
-                os_log("Process completed", type: .debug)
+            try process = Process.run(command, arguments: arguments) { _ in
+                logger.info("Process completed")
                 sender.state = .off
+                DispatchQueue.main.async {
+                    self.statusItem.button?.image = NSImage(named: "CoffeeIcon")
+                }
             }
         } catch {
-            os_log("Failed to run process", type: .error)
+            logger.error("Failed to run process")
             process = nil
             sender.state = .mixed
             sender.mixedStateImage = NSImage(named: NSImage.statusUnavailableName)
+            statusItem.button?.image = NSImage(named: "CoffeeIcon")
         }
     }
     
