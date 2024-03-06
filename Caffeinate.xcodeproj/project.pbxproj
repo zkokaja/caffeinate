@@ -7,18 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB83FBF22B51A26F00E45686 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB83FBF12B51A26F00E45686 /* main.swift */; };
-		BBA40E9823D7CA4700F867AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA40E9723D7CA4700F867AB /* AppDelegate.swift */; };
+		BB66479D2B655361005270B7 /* Caffeinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66479C2B655361005270B7 /* Caffeinate.swift */; };
 		BBA40E9A23D7CA4800F867AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA40E9923D7CA4800F867AB /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB407D6C2B9898A800CA6A55 /* build-release.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = "build-release.yml"; path = ".github/workflows/build-release.yml"; sourceTree = "<group>"; };
 		BB6647802B654904005270B7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BB83FBF12B51A26F00E45686 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BB66479C2B655361005270B7 /* Caffeinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caffeinate.swift; sourceTree = "<group>"; };
 		BBA40E9423D7CA4700F867AB /* Caffeinate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caffeinate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBA40E9723D7CA4700F867AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA40E9923D7CA4800F867AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BBA40E9F23D7CA4800F867AB /* Caffeinate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caffeinate.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +34,7 @@
 			isa = PBXGroup;
 			children = (
 				BB6647802B654904005270B7 /* README.md */,
+				BB407D6C2B9898A800CA6A55 /* build-release.yml */,
 				BBA40E9623D7CA4700F867AB /* Caffeinate */,
 				BBA40E9523D7CA4700F867AB /* Products */,
 			);
@@ -52,10 +51,8 @@
 		BBA40E9623D7CA4700F867AB /* Caffeinate */ = {
 			isa = PBXGroup;
 			children = (
-				BB83FBF12B51A26F00E45686 /* main.swift */,
-				BBA40E9723D7CA4700F867AB /* AppDelegate.swift */,
+				BB66479C2B655361005270B7 /* Caffeinate.swift */,
 				BBA40E9923D7CA4800F867AB /* Assets.xcassets */,
-				BBA40E9F23D7CA4800F867AB /* Caffeinate.entitlements */,
 			);
 			path = Caffeinate;
 			sourceTree = "<group>";
@@ -130,8 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB83FBF22B51A26F00E45686 /* main.swift in Sources */,
-				BBA40E9823D7CA4700F867AB /* AppDelegate.swift in Sources */,
+				BB66479D2B655361005270B7 /* Caffeinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +188,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -250,7 +246,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -263,7 +259,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Caffeinate/Caffeinate.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -278,8 +273,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = zzada.Caffeinate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -290,7 +285,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Caffeinate/Caffeinate.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -305,8 +299,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = zzada.Caffeinate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

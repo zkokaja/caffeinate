@@ -1,11 +1,11 @@
 <h1>
-<img src="images/coffee-icon.svg" alt="Coffee Cup Icon" width="64" />
+<img src="images/icon.svg" alt="Coffee Cup Icon" width="64" />
 Caffeinate
 </h1>
 
-<a href="https://github.com/zkokaja/caffeinate/releases/tag/v1.0">
-    <img src="images/release-badge.svg" alt="Version 1.0 Release Badge" />
-</a>
+![GitHub Release](https://img.shields.io/github/v/release/zkokaja/caffeinate)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zkokaja/caffeinate/build-release.yml)
+![GitHub License](https://img.shields.io/github/license/zkokaja/caffeinate)
 
 Have you ever noticed your mac getting sleepy at the most inopportune time?
 First its display dims a little bit, and next it falls asleep altogether! With
@@ -57,7 +57,7 @@ From ` man caffeinate`:
 
 ## Developer
 
-The code is very simply and self explanatory, and I welcome contributions. We simply 
+The code is very simple and self explanatory, and I welcome contributions. We simply 
 fork a process to `/usr/bin/caffeinate` for the core functionality.
 
 ## Attribution
