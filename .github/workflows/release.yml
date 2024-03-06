@@ -8,11 +8,9 @@ on: workflow_dispatch
 jobs:
   build:
     name: Build and release with xcodebuild
-    runs-on: macos-latest
+    runs-on: macos-13
 
-    steps:
-      - name: Double-check macOS version
-        run: sw_vers    
+    steps:  
       - name: Checkout
         uses: actions/checkout@v3
       - name: Check xcodebuild version
