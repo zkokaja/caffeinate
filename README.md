@@ -60,7 +60,6 @@ From ` man caffeinate`:
 The code is very simple and self explanatory, and I welcome contributions. We simply 
 fork a process to `/usr/bin/caffeinate` for the core functionality.
 
-## Attribution
 
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from 
 [www.flaticon.com](https://www.flaticon.com).
