@@ -1,0 +1,33 @@
+name: Xcode - Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  build:
+    name: Build and release with xcodebuild
+    runs-on: macos-latest
+
+    steps:
+      - name: Switch xcode to 15.2
+        uses: maxim-lobanov/setup-xcode@v1.2.3
+        with:
+          xcode-version: '15.2'
+      - name: Double-check macOS version
+        run: sw_vers    
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Check xcodebuild version
+        run: xcodebuild -version
+      - name: Check xcode embedded SDKs
+        run: xcodebuild -showsdks
+      - name: Show buildable schemes
+        run: xcodebuild -list
+      - uses: mxcl/xcodebuild@v1.9.2
+        with:
+          platform: macOS
+          action: build
+          verbosity: xcpretty
+          upload-logs: always          
