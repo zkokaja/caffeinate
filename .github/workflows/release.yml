@@ -20,7 +20,7 @@ jobs:
       run: xcodebuild -list    
       
     - name: Checkout
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
 
     - name: Build App
       run: xcodebuild build -project 'Caffeinate.xcodeproj' -scheme 'Caffeinate' -destination 'generic/platform=macOS' -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
