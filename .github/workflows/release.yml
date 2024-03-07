@@ -1,9 +1,9 @@
-name: Xcode - Build and Release
+name: Build and Release
 
-on: workflow_dispatch
-  # push:
-  #   tags:
-      # - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10       
+on: 
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10       
 
 jobs:
   build:
@@ -37,5 +37,6 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
+        name: Release ${{ github.ref }}
         draft: true
         files: Caffeinate.zip
