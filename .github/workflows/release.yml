@@ -3,25 +3,39 @@ name: Xcode - Build and Release
 on: workflow_dispatch
   # push:
   #   tags:
-      # - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      # - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10       
 
 jobs:
   build:
     name: Build and release with xcodebuild
     runs-on: macos-13
+    steps:
+    - name: Check xcodebuild version
+      run: xcodebuild -version
+      
+    - name: Check xcode embedded SDKs
+      run: xcodebuild -showsdks
+      
+    - name: Show buildable schemes
+      run: xcodebuild -list    
+      
+    - name: Checkout
+    - uses: actions/checkout@v4
 
-    steps:  
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Check xcodebuild version
-        run: xcodebuild -version
-      - name: Check xcode embedded SDKs
-        run: xcodebuild -showsdks
-      - name: Show buildable schemes
-        run: xcodebuild -list
-      - uses: mxcl/xcodebuild@v1.9.2
-        with:
-          platform: macOS
-          action: build
-          verbosity: xcpretty
-          upload-logs: always          
+    - name: Build App
+      run: xcodebuild build -project 'Caffeinate.xcodeproj' -scheme 'Caffeinate' -destination 'generic/platform=macOS' -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
+    - name: Archive App
+      run:  xcodebuild -scheme 'Caffeinate' -configuration Release archive -archivePath CT.xcarchive
+    
+    - name: Export App
+      run: xcodebuild -exportArchive -exportPath . -archivePath CT.xcarchive/ -exportOptionsPlist Caffeinate/exportOptions.plist
+
+    - name: Compress App
+      run: zip -r Caffeinate.zip Caffeinate.app
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        draft: true
+        files: Caffeinate.zip
