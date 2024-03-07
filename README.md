@@ -4,7 +4,7 @@ Caffeinate
 </h1>
 
 ![GitHub Release](https://img.shields.io/github/v/release/zkokaja/caffeinate)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zkokaja/caffeinate/build-release.yml)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zkokaja/caffeinate/release.yml)
 ![GitHub License](https://img.shields.io/github/license/zkokaja/caffeinate)
 
 Have you ever noticed your mac getting sleepy at the most inopportune time?
